@@ -7,8 +7,10 @@ export default class Dashboard extends Component {
         houses: []
     }
 
-    getAllHouses() {
-        axios.get().then().catch()
+    componentDidMount() {
+        axios.get('').then(res => {
+
+        })
     }
 
     deleteHouse() {

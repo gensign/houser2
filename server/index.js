@@ -19,6 +19,6 @@ massive(CONNECTION_STRING).then( db =>{
 }).catch(err => console.log(err))
 
 // End points
-// app.get('/api/houses', houseCtrl.getHouses)
+app.get('/api/houses', houseCtrl.getHouses)
 // app.post('/api/house', houseCtrl.addHouse)
 // app.delete('/api/house/:id', houseCtrl.deleteHouse)
