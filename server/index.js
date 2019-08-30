@@ -20,5 +20,5 @@ massive(CONNECTION_STRING).then( db =>{
 
 // End points
 app.get('/api/houses', houseCtrl.getHouses)
-// app.post('/api/house', houseCtrl.addHouse)
-// app.delete('/api/house/:id', houseCtrl.deleteHouse)
+app.post('/api/house', houseCtrl.addHouse)
+app.delete('/api/house/:id', houseCtrl.deleteHouse)
