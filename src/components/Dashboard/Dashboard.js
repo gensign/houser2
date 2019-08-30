@@ -6,6 +6,8 @@ export default class Dashboard extends Component {
         return (
             <div>
                 <House />
+                <button>Add New Property</button>
+                <button>Cancel</button>
             </div>
         )
     }
