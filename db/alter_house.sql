@@ -1,0 +1,2 @@
+ALTER TABLE houser
+ADD COLUMN image TEXT;
