@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import House from '../House/House'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export default class Dashboard extends Component {
     constructor() {
@@ -25,13 +26,15 @@ export default class Dashboard extends Component {
         }).catch('Unable to connect to Database')
     }
 
-    deleteHouse() {
-        axios.delete().then().catch()
-    }
-
     render() {
         return (
             <div>
+                <div>
+                    <h1>Dashboard</h1>
+                    <Link to='/wizard/step1'>
+                        <button>Add New Property</button>
+                    </Link>
+                </div>
                 {this.state.houses.map(house => {
                     return (
                         <div>
@@ -39,7 +42,6 @@ export default class Dashboard extends Component {
                         </div>
                     )
                 })}
-                <button>Add New Property</button>
             </div>
         )
     }

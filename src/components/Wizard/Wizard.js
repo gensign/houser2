@@ -1,34 +1,31 @@
 import React, { Component } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
+import wizardOne from './wizardOne'
+import wizardTwo from './wizardTwo'
+import wizardThree from './wizardThree'
+import { Route } from 'react-router-dom'
 
 export default class Wizard extends Component {
-    state = {
-        name: '',
-        address: '',
-        city: '',
-        state: '',
-        zip: 0
-    }
-
-    handleChange(prop, e) {
+    cancel() {
         this.setState({
-            [prop]: e.target.value
+            name: '',
+            address: '',
+            city: '',
+            state: '',
+            zip: 0
         })
     }
-
-    addHouse() {
-        axios.post().then().catch()
-    }
+    
 
     render() {
         return (
             <div>
-                <span>House Name:<input onChange={e => this.handleChange('property_name', e)} name="itemName" type="text" /></span>
-                <span>Address<input onChange={e => this.handleChange('the_address', e)} name="category" type="text" /></span>
-                <span>City<input onChange={e => this.handleChange('city',e)} name="category" type="text" /></span>
-                <span>State<input onChange={e => this.handleChange('the_state',e)} name="category" type="text" /></span>
-                <span>Zip<input onChange={e => this.handleChange('zip',e)} name="category" type="text" /></span>
-                <button>Cancel</button>
+                <Route path='/wizard/step1' component={wizardOne} />
+                <Route path='/wizard/step2' component={wizardTwo} />
+                <Route path='/wizard/step3' component={wizardThree} />
+                <div>
+                    <button onClick={this.cancel}>Cancel</button>
+                </div>
             </div>
         )
     }
